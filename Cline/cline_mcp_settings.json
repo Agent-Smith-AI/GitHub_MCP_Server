@@ -1,0 +1,42 @@
+{
+  "mcpServers": {
+    "github.com/modelcontextprotocol/servers/tree/main/src/filesystem": {},
+    "github.com/github/github-mcp-server": {
+      "autoApprove": [
+        "search_users",
+        "list_branches",
+        "list_commits",
+        "search_issues",
+        "search_pull_requests",
+        "list_notifications",
+        "search_orgs",
+        "list_code_scanning_alerts",
+        "list_workflows",
+        "push_files",
+        "create_issue",
+        "add_issue_comment",
+        "update_issue",
+        "create_or_update_file",
+        "create_pull_request",
+        "add_pull_request_review_comment_to_pending_review",
+        "update_pull_request",
+        "update_pull_request_branch"
+      ],
+      "disabled": false,
+      "timeout": 60,
+      "type": "stdio",
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN",
+        "ghcr.io/github/github-mcp-server"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+      }
+    }
+  }
+}
